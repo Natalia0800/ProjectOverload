@@ -12,11 +12,17 @@ public class PDFLController {
 
     private double p,d,f,l;
 
-    private double position, target, error, oldError, dError;
+    private double target, error, oldError, dError;
 
     private long time, oldTime;
 
-
+    /**
+     * Constructor for PDFLController.
+     * @param p The proportional gain
+     * @param d The derivative gain
+     * @param f The feedforward gain
+     * @param l The lower limit of the controller
+     */
     public PDFLController(double p,double d,double f,double l) {
         this.p = p;
         this.d = d;
@@ -24,12 +30,20 @@ public class PDFLController {
         this.l = l;
     }
 
+    /**
+     * Runs the PDFL controller using the given position and target.
+     * @return The output of the controller
+     */
     public double runPDFL() {
         double returnVal = error*p + dError*d + f;
 
         return Math.max(l, Math.abs(returnVal)) * returnVal/Math.abs(returnVal);
     }
 
+    /**
+     * Updates the PDFL controller.
+     * @param position The current position of the system
+     */
     public void update(double position) {
         oldError = error;
         error = target-position;
@@ -40,6 +54,57 @@ public class PDFLController {
         dError = (error-oldError) /((time-oldTime)/ Math.pow(10.0,9));
     }
 
-
+    /**
+     * Sets the target of the controller.
+     * @param target The target
+     */
     public void setTarget(double target) {this.target = target;}
+
+    /**
+     * Sets proportional gain of the controller.
+     * @param p The proportional gain
+     */
+    public void setP(double p) {this.p = p;}
+
+    /**
+     * Sets derivative gain of the controller.
+     * @param d The derivative gain
+     */
+    public void setD(double d) {this.d = d;}
+
+    /**
+     * Sets feedforward gain of the controller.
+     * @param f The feedforward gain
+     */
+    public void setF(double f) {this.f = f;}
+
+    /**
+     * Sets lower limit of the controller.
+     * @param l The lower limit
+     */
+    public void setL(double l) {this.l = l;}
+
+    /**
+     * Gets the proportional gain of the controller.
+     * @return The proportional gain
+     */
+    public double getP() {return p;}
+
+    /**
+     * Gets the derivative gain of the controller.
+     * @return The derivative gain
+     */
+    public double getD() {return d;}
+
+    /**
+     * Gets the feedforward gain of the controller.
+     * @return The feedforward gain
+     */
+    public double getF() {return f;}
+
+    /**
+     * Gets the lower limit of the controller.
+     * @return The lower limit
+     */
+    public double getL() {return l;}
 }
