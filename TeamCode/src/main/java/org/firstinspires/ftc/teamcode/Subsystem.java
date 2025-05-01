@@ -23,8 +23,10 @@ public class Subsystem {
     private ArrayList<DcMotorEx> motors = new ArrayList<>();
     private ArrayList<HardwareDevice> devices = new ArrayList<>();
     private ArrayList<Servo> servos = new ArrayList<>();
-
-    public Subsystem(ArrayList<HardwareDevice> devices, ArrayList<DcMotorEx> motors, ArrayList<Servo> servos) {
+    private double[] position = new double[3];
+    
+    public Subsystem(ArrayList<HardwareDevice> devices, ArrayList<DcMotorEx> motors, ArrayList<Servo> servos, double[] position) {
+        this.position = position;
         this.devices = devices;
         this.motors = motors;
         this.servos = servos;
