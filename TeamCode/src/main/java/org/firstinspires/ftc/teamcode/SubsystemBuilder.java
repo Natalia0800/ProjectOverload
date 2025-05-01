@@ -26,7 +26,17 @@ public class SubsystemBuilder {
         return this;
     }
 
+    public SubsystemBuilder setPosition(double[] position) {
+        this.position[0] = position[0];
+        this.position[1] = position[1];
+        this.position[2] = position[2];
+        return this;
+        
+    }
+    
+    public Subsystem
+
     public Subsystem build() {
-        return new Subsystem(devices, motors, servos);
+        return new Subsystem(devices, motors, servos, positions);
     }
 }
