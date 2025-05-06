@@ -33,7 +33,10 @@ public class ProcessBUilder {
         return this;
         
     }
-    
+    // How the completion parameters will be made
+    public SubsystemBuilder CompletionParameter() {
+        return();
+    }
     public Subsystem
 
     public Subsystem build() {
