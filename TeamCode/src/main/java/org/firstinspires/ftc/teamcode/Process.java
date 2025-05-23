@@ -19,6 +19,10 @@ public class Process {
     private ArrayList<DcMotorEx> motors = new ArrayList<>();
     private ArrayList<HardwareDevice> devices = new ArrayList<>();
     private ArrayList<Servo> servos = new ArrayList<>();
+
+    public void reset() {
+            startTime = System.nanoTime();
+    }
     
     public Process(ArrayList<HardwareDevice> devices, ArrayList<DcMotorEx> motors, ArrayList<Servo> servos) {
         this.devices = devices;
