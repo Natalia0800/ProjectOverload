@@ -9,6 +9,6 @@ public class mechDrive() extends DriveTrainSubsystem {
 
 
 public mechDrive(ArrayList<DcMotorEx> motors,  double[] position){
-
+  super(motors, ArrayList<servo>(), position);
 }
 }
