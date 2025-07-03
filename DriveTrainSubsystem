@@ -11,7 +11,7 @@ public class Drivetrain(){
   private PDFLController Heading;
   private PDFLController Translational;
 
-public Drivetrain(ArrayList<HardwareDevice> devices, ArrayList<DcMotorEx> motors, ArrayList<Servo> servos, double[] position){
-  super(devices, motors, <Servo> servos, position);
+public Drivetrain( ArrayList<DcMotorEx> motors, ArrayList<Servo> servos, double[] position){
+  super(ArrayList<hardware devices>(),motors, servos, position);
 }
 }
