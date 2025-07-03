@@ -1,0 +1,17 @@
+import com.qualcomm.robotcore.hardware.DcMotorEx;
+import com.qualcomm.robotcore.hardware.HardwareDevice;
+import com.qualcomm.robotcore.hardware.Servo;
+
+import java.util.ArrayList;
+
+public class Drivetrain(){
+
+  private PDFLController Centripetal;
+  private PDFLController Drive;
+  private PDFLController Heading;
+  private PDFLController Translational;
+
+public Drivetrain(ArrayList<HardwareDevice> devices, ArrayList<DcMotorEx> motors, ArrayList<Servo> servos, double[] position){
+  super(devices, motors, <Servo> servos, position);
+}
+}
